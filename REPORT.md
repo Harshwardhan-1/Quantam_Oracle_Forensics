@@ -23,13 +23,13 @@ All thresholds in [`solver.py`](solver.py) were tuned empirically on our simulat
 
 - **Calibration Shots (`shots = 150`)**: Yields 1200 bit observations, bounding $\text{SE}(\hat{\eta}) \le 0.004$ at $\eta=0.02$ with 0 query cost.
 - **Simon Allocation (`total_shots = 48`)**: While $n-1=7$ vectors suffice noiselessly, 48 shots provide $>6\times$ redundancy against misfires while conserving 12 queries (20% saving).
-- **Simon Thresholds (`s2_thresh = 36`, `s1_thresh = 38`)**: For `perm`, expected orthogonal count in 48 shots is $24 \pm 3.46$. Threshold 38 sits $4.04\sigma$ above the mean. For `simon2`, requiring three closed vectors $h_1 \oplus h_2 = h_3$ in top 12 with $\min(\text{count}) \ge \max(36, \text{top\_score} - 6)$ absorbs misfire degradation.
+- **Simon Thresholds (`s2_thresh = 36`, `s1_thresh = 38`)**: For `perm`, expected orthogonal count in 48 shots is $24 \pm 3.46$. Threshold 38 sits $4.04\sigma$ above the mean. For `simon2`, requiring three closed vectors $h_1 \oplus h_2 = h_3$ in top 12 with $\min(\text{count}) \ge \max(36, \text{top score} - 6)$ absorbs misfire degradation.
 - **BV Diagnostic Shots (`diag_shots = 8`)**: Minimal sample budget to detect linear peaks while reserving 52 queries for Branch C or 34 queries for Grover.
 - **Linear Peak Count (`top_nonzero_cnt >= 3`)**: Under uniform noise, the chance of an identical non-zero string appearing $\ge 3$ times in 8 shots is $< 0.0002$.
 - **Grover Iterations (`k_iter = 8` if $\eta \ge 0.03$ else `9`)**: Noiseless optimum is 12. However, misfire probability compounds as $(1 - p_{\text{mis}})^k$. At $p_{\text{mis}}=0.08$, fidelity after 12 iterations drops to $0.92^{12} \approx 0.36$. Truncating to 8 or 9 iterations ($0.92^8 \approx 0.51$) balances rotation angle against misfire decay.
 - **Direct Query Verification (`shots = 2` or `3`)**: Majority voting suppresses 2%–4% readout flips. Grover candidate verification tests the candidate and all 8 Hamming-1 neighbors to tolerate single readout flips.
 - **Branch C Constant Guard**: Observing $\le 10\%$ or $\ge 90\%$ ones across $\ge 20$ samples returns `constant(0)` or `constant(1)`.
-- **LLR Decision Rule (`llr >= 0.35`)**: Evaluates noise-adjusted probabilities $p_{\text{bal}} = 0.5(1-p_{\text{mis}})(1-2\eta_c) + \eta_c$ and $p_{\text{ran}} = 0.3(1-p_{\text{mis}})(1-2\eta_c) + \eta_c$ with BV prior $\text{LLR}_{\text{prior}} = -0.65 \times \text{zero\_count}$. The 0.35 threshold balances classification errors empirically.
+- **LLR Decision Rule (`llr >= 0.35`)**: Evaluates noise-adjusted probabilities $p_{\text{bal}} = 0.5(1-p_{\text{mis}})(1-2\eta_c) + \eta_c$ and $p_{\text{ran}} = 0.3(1-p_{\text{mis}})(1-2\eta_c) + \eta_c$ with BV prior $\text{LLR}_{\text{prior}} = -0.65 \times \text{zero count}$. The 0.35 threshold balances classification errors empirically.
 
 ---
 
