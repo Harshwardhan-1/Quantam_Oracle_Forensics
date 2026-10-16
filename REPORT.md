@@ -5,12 +5,12 @@
 
 ## Strategy and architecture
 
-Our solver identifies sealed quantum black boxes $U_f |x\rangle|y\rangle = |x\rangle|y \oplus f(x)\rangle$ ($n=8, m \in \{1, 8\}$) within 60 queries under gate misfires (4% normal, 8% stress) and readout flips (2% normal, 4% stress) using an adaptive pipeline:
+Our solver identifies sealed quantum black boxes $U_f \vert{}x\rangle\vert{}y\rangle = \vert{}x\rangle\vert{}y \oplus f(x)\rangle$ ($n=8, m \in \{1, 8\}$) within 60 queries under gate misfires (4% normal, 8% stress) and readout flips (2% normal, 4% stress) using an adaptive pipeline:
 
-1. **Readout Calibration (0 Queries)**: A zero-oracle circuit ($|0\rangle^{\otimes 8}$ measured directly) runs for 150 shots ($k = 0$ oracle gates $\implies 0$ queries). Measuring 1200 bits yields $\eta = \text{ones} / 1200 \in [0.005, 0.15]$, calibrating downstream likelihood models.
+1. **Readout Calibration (0 Queries)**: A zero-oracle circuit ($\vert{}0\rangle^{\otimes 8}$ measured directly) runs for 150 shots ($k = 0$ oracle gates $\implies 0$ queries). Measuring 1200 bits yields $\eta = \text{ones} / 1200 \in [0.005, 0.15]$, calibrating downstream likelihood models.
 2. **Dimension Partitioning**: Branches on output width $m$: $m=8$ (`simon`, `simon2`, `perm`) vs $m=1$ (`constant`, `balanced`, `linear`, `grover`, `randfun`).
 3. **Phase 1 ($m = 8$): Subspace Orthogonality**: A Simon circuit ($H^{\otimes 8}$–oracle–$H^{\otimes 8}$–measure) runs for 48 shots. Candidates $v \in \{1..255\}$ are scored via $y \cdot v \equiv 0 \pmod 2$. `simon` satisfies $y \cdot s = 0$ for hidden period $s$; `simon2` satisfies $y \cdot h = 0$ for all three non-zero elements of 2D subspace $H$; `perm` yields uniform outcomes across $\mathbb{F}_2^8$.
-4. **Phase 1 ($m = 1$): Bernstein-Vazirani (BV) Diagnostic**: An 8-shot BV circuit (ancilla in $|-\rangle$) extracts Fourier signatures:
+4. **Phase 1 ($m = 1$): Bernstein-Vazirani (BV) Diagnostic**: An 8-shot BV circuit (ancilla in $\vert{}-\rangle$) extracts Fourier signatures:
    - **Branch A (`linear`)**: If a non-zero vector $a$ peaks with count $\ge 3$, offset $b$ is recovered by querying $f(0)$ (3 shots). A basis check $f(2^k) = 1 \oplus b$ (2 shots) confirms $[a, b]$.
    - **Branch B (`constant` / `grover`)**: If state $0^8$ dominates ($\ge 4$ counts), querying $f(0)$ (3 shots) resolves the branch: if $f(0)=1$, testing $f(1)$ (3 shots) separates `constant(1)` from `grover(0)`. If $f(0)=0$, the solver runs up to three 1-shot Grover searches ($k \in \{8, 9\}$ iterations), checking candidate $t$ and its 8 Hamming-1 neighbors via direct queries. If unconfirmed, it defaults to `constant(0)`.
    - **Branch C (`balanced` vs `randfun`)**: For diffuse BV outcomes, remaining queries (52) evaluate distinct inputs classically via Log-Likelihood Ratio (LLR) hypothesis testing.
@@ -53,7 +53,7 @@ Theoretical query paths match empirical averages from [`logs/benchmarks_summary.
 
 Evaluations across 400 instances per regime (50 per family) from [`logs/benchmarks_summary.json`](logs/benchmarks_summary.json) demonstrate substantial gains over required baselines:
 
-- **Normal Noise**: Proposed Adaptive reaches **96.50%** accuracy [95% CI: 94.21%, 97.90%], Worst: **94.00%**, Saving: **27.93%**, Avg Queries: 43.51. Outperforms Baseline 1 (Classical-Only: 32.00%, saving 23.12%), Baseline 2 (Single-Algorithm: 26.50%), Baseline 3 (Random: 8.75%), and Baseline 4 (Non-Adaptive: 38.75%).
+- **Normal Noise**: Proposed Adaptive reaches **96.50%** accuracy [95% CI: 94.21%, 97.90%], Worst: **94.00%**, Saving: **27.93%**, Avg Queries: 43.51. Outperforms Baseline 1 (Classical-Only: 32.00%, saving 23.12%), Baseline 2 (Single-Algorithm: 26.50%), Baseline 3 (Random: 10.25%), and Baseline 4 (Non-Adaptive: 38.75%).
 - **Stress Noise**: Proposed Adaptive achieves **88.50%** accuracy [95% CI: 85.00%, 91.27%], Worst: **76.00%**, Saving: **28.07%**, Avg Queries: 43.73. Outperforms Baseline 1 (25.75%), Baseline 2 (25.75%), Baseline 3 (12.25%), and Baseline 4 (34.50%).
 
 **Confusion Matrix (50 instances/family from logs)**:
@@ -78,7 +78,7 @@ Evaluations across 400 instances per regime (50 per family) from [`logs/benchmar
 
 ## Where the solver fails
 
-Analysis across [`logs/benchmarks_summary.json`](logs/benchmarks_summary.json) (50 trials/family) and `accuracy_check.py` (from accuracy_check.py, 100 trials/family) highlights key failure modes:
+Analysis across [`logs/benchmarks_summary.json`](logs/benchmarks_summary.json) (50 trials/family) and `accuracy_check.py` (100 trials/family) highlights key failure modes:
 
 1. **`grover` Confused as `constant(0)`**: In logs, 3/50 (normal) and 9/50 (stress) were confused as `constant`. In `accuracy_check.py`, 5/100 (normal) and 16/100 (stress) failed. Multi-iteration Grover circuits suffer compounded misfire decay ($(1-0.08)^9 \approx 47\%$ misfire chance under stress). When amplification fails, the solver defaults to `constant(0)`.
 2. **`simon2` Confused as `simon`**: In logs, 2/50 (normal) and 10/50 (stress) were confused as `simon`. In `accuracy_check.py`, 21/100 under stress failed. When noise drops one subspace vector below $s_2=36$, the solver detects only the dominant vector and outputs `simon`.
