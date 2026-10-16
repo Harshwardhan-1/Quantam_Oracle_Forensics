@@ -10,7 +10,7 @@
       "family_identification_accuracy": 0.9675,
       "query_saving": 0.27931778929188256,
       "average_queries": 43.505,
-      "average_runtime_sec": 0.005554629564285278,
+      "average_runtime_sec": 0.005679752230644226,
       "per_family_accuracy": {
         "constant": 0.98,
         "balanced": 0.94,
@@ -114,7 +114,7 @@
       "family_identification_accuracy": 0.405,
       "query_saving": 0.23125,
       "average_queries": 41.485,
-      "average_runtime_sec": 0.01804505944252014,
+      "average_runtime_sec": 0.018339804410934447,
       "per_family_accuracy": {
         "constant": 0.12,
         "balanced": 0.94,
@@ -218,7 +218,7 @@
       "family_identification_accuracy": 0.375,
       "query_saving": 0.1666666666666666,
       "average_queries": 50.0,
-      "average_runtime_sec": 0.0034242552518844605,
+      "average_runtime_sec": 0.0034416252374649048,
       "per_family_accuracy": {
         "constant": 0.52,
         "balanced": 0.0,
@@ -313,73 +313,73 @@
       }
     },
     "Baseline 3 (Random Guessing)": {
-      "overall_accuracy": 0.0875,
+      "overall_accuracy": 0.1025,
       "accuracy_ci_95": [
-        0.06358695157618474,
-        0.11926065964517749
+        0.07645889877092807,
+        0.13610334476965735
       ],
       "worst_family_accuracy": 0.0,
-      "family_identification_accuracy": 0.26,
+      "family_identification_accuracy": 0.245,
       "query_saving": 1.0,
       "average_queries": 0.0,
-      "average_runtime_sec": 3.081202507019043e-05,
+      "average_runtime_sec": 3.080010414123535e-05,
       "per_family_accuracy": {
-        "constant": 0.06,
-        "balanced": 0.06,
+        "constant": 0.1,
+        "balanced": 0.22,
         "linear": 0.0,
         "grover": 0.0,
-        "randfun": 0.3,
+        "randfun": 0.2,
         "simon": 0.0,
         "simon2": 0.0,
-        "perm": 0.28
+        "perm": 0.3
       },
       "confusion_matrix": {
         "constant": {
-          "constant": 9,
-          "balanced": 9,
-          "linear": 9,
-          "grover": 11,
-          "randfun": 12,
+          "constant": 8,
+          "balanced": 14,
+          "linear": 12,
+          "grover": 8,
+          "randfun": 8,
           "simon": 0,
           "simon2": 0,
           "perm": 0
         },
         "balanced": {
-          "constant": 14,
-          "balanced": 3,
-          "linear": 7,
-          "grover": 13,
-          "randfun": 13,
+          "constant": 11,
+          "balanced": 11,
+          "linear": 10,
+          "grover": 7,
+          "randfun": 11,
           "simon": 0,
           "simon2": 0,
           "perm": 0
         },
         "linear": {
           "constant": 12,
-          "balanced": 11,
-          "linear": 11,
-          "grover": 5,
-          "randfun": 11,
+          "balanced": 13,
+          "linear": 9,
+          "grover": 6,
+          "randfun": 10,
           "simon": 0,
           "simon2": 0,
           "perm": 0
         },
         "grover": {
-          "constant": 5,
-          "balanced": 8,
-          "linear": 7,
-          "grover": 17,
-          "randfun": 13,
+          "constant": 10,
+          "balanced": 14,
+          "linear": 8,
+          "grover": 13,
+          "randfun": 5,
           "simon": 0,
           "simon2": 0,
           "perm": 0
         },
         "randfun": {
-          "constant": 14,
-          "balanced": 11,
-          "linear": 4,
-          "grover": 6,
-          "randfun": 15,
+          "constant": 12,
+          "balanced": 8,
+          "linear": 8,
+          "grover": 12,
+          "randfun": 10,
           "simon": 0,
           "simon2": 0,
           "perm": 0
@@ -390,9 +390,9 @@
           "linear": 0,
           "grover": 0,
           "randfun": 0,
-          "simon": 14,
-          "simon2": 16,
-          "perm": 20
+          "simon": 17,
+          "simon2": 19,
+          "perm": 14
         },
         "simon2": {
           "constant": 0,
@@ -400,8 +400,8 @@
           "linear": 0,
           "grover": 0,
           "randfun": 0,
-          "simon": 13,
-          "simon2": 21,
+          "simon": 19,
+          "simon2": 15,
           "perm": 16
         },
         "perm": {
@@ -410,9 +410,9 @@
           "linear": 0,
           "grover": 0,
           "randfun": 0,
-          "simon": 22,
-          "simon2": 14,
-          "perm": 14
+          "simon": 24,
+          "simon2": 11,
+          "perm": 15
         }
       }
     },
@@ -426,7 +426,7 @@
       "family_identification_accuracy": 0.4975,
       "query_saving": 0.45376344086021514,
       "average_queries": 27.5,
-      "average_runtime_sec": 0.003309440016746521,
+      "average_runtime_sec": 0.0033272475004196165,
       "per_family_accuracy": {
         "constant": 0.52,
         "balanced": 0.0,
@@ -532,7 +532,7 @@
       "family_identification_accuracy": 0.8975,
       "query_saving": 0.280743879472693,
       "average_queries": 43.7275,
-      "average_runtime_sec": 0.005844830274581909,
+      "average_runtime_sec": 0.005871689319610596,
       "per_family_accuracy": {
         "constant": 0.92,
         "balanced": 0.86,
@@ -636,7 +636,7 @@
       "family_identification_accuracy": 0.38,
       "query_saving": 0.1527508090614887,
       "average_queries": 40.1,
-      "average_runtime_sec": 0.015107889771461486,
+      "average_runtime_sec": 0.015223484635353089,
       "per_family_accuracy": {
         "constant": 0.0,
         "balanced": 0.9,
@@ -740,7 +740,7 @@
       "family_identification_accuracy": 0.375,
       "query_saving": 0.16666666666666669,
       "average_queries": 50.0,
-      "average_runtime_sec": 0.0036547452211380003,
+      "average_runtime_sec": 0.003646256923675537,
       "per_family_accuracy": {
         "constant": 0.52,
         "balanced": 0.0,
@@ -841,66 +841,66 @@
         0.15826854695539674
       ],
       "worst_family_accuracy": 0.0,
-      "family_identification_accuracy": 0.2675,
+      "family_identification_accuracy": 0.2575,
       "query_saving": 1.0,
       "average_queries": 0.0,
-      "average_runtime_sec": 3.0797123908996585e-05,
+      "average_runtime_sec": 3.147006034851074e-05,
       "per_family_accuracy": {
-        "constant": 0.16,
-        "balanced": 0.26,
+        "constant": 0.12,
+        "balanced": 0.34,
         "linear": 0.0,
         "grover": 0.0,
         "randfun": 0.24,
         "simon": 0.0,
         "simon2": 0.0,
-        "perm": 0.32
+        "perm": 0.28
       },
       "confusion_matrix": {
         "constant": {
-          "constant": 12,
-          "balanced": 11,
+          "constant": 8,
+          "balanced": 7,
           "linear": 12,
-          "grover": 7,
-          "randfun": 8,
+          "grover": 9,
+          "randfun": 14,
           "simon": 0,
           "simon2": 0,
           "perm": 0
         },
         "balanced": {
-          "constant": 13,
-          "balanced": 13,
-          "linear": 10,
-          "grover": 4,
-          "randfun": 10,
+          "constant": 9,
+          "balanced": 17,
+          "linear": 9,
+          "grover": 12,
+          "randfun": 3,
           "simon": 0,
           "simon2": 0,
           "perm": 0
         },
         "linear": {
-          "constant": 9,
-          "balanced": 12,
-          "linear": 11,
-          "grover": 14,
-          "randfun": 4,
+          "constant": 12,
+          "balanced": 8,
+          "linear": 9,
+          "grover": 9,
+          "randfun": 12,
           "simon": 0,
           "simon2": 0,
           "perm": 0
         },
         "grover": {
           "constant": 8,
-          "balanced": 12,
-          "linear": 11,
+          "balanced": 9,
+          "linear": 8,
           "grover": 10,
-          "randfun": 9,
+          "randfun": 15,
           "simon": 0,
           "simon2": 0,
           "perm": 0
         },
         "randfun": {
-          "constant": 10,
-          "balanced": 8,
-          "linear": 16,
-          "grover": 4,
+          "constant": 9,
+          "balanced": 16,
+          "linear": 6,
+          "grover": 7,
           "randfun": 12,
           "simon": 0,
           "simon2": 0,
@@ -912,8 +912,8 @@
           "linear": 0,
           "grover": 0,
           "randfun": 0,
-          "simon": 15,
-          "simon2": 21,
+          "simon": 16,
+          "simon2": 20,
           "perm": 14
         },
         "simon2": {
@@ -922,9 +922,9 @@
           "linear": 0,
           "grover": 0,
           "randfun": 0,
-          "simon": 19,
-          "simon2": 18,
-          "perm": 13
+          "simon": 15,
+          "simon2": 17,
+          "perm": 18
         },
         "perm": {
           "constant": 0,
@@ -932,9 +932,9 @@
           "linear": 0,
           "grover": 0,
           "randfun": 0,
-          "simon": 14,
+          "simon": 16,
           "simon2": 20,
-          "perm": 16
+          "perm": 14
         }
       }
     },
@@ -948,7 +948,7 @@
       "family_identification_accuracy": 0.455,
       "query_saving": 0.46859903381642526,
       "average_queries": 27.5,
-      "average_runtime_sec": 0.0036108171939849853,
+      "average_runtime_sec": 0.003598085045814514,
       "per_family_accuracy": {
         "constant": 0.52,
         "balanced": 0.0,
