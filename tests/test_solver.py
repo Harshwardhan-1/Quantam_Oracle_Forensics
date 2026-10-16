@@ -2,6 +2,8 @@
 tests/test_solver.py - Comprehensive unit and integration tests for solver.py.
 """
 
+import zlib
+
 import pytest
 import numpy as np
 from solver import solve
@@ -85,7 +87,7 @@ def test_public_reference_constant():
 
 @pytest.mark.parametrize("family", ["constant", "balanced", "linear", "grover", "randfun", "simon", "simon2", "perm"])
 def test_all_families_normal_noise(family):
-    rng = np.random.default_rng(hash(family) % 100000)
+    rng = np.random.default_rng(zlib.crc32(family.encode()) % 100000)
     f = generate_oracle(family, rng=rng)
     sim = OracleSimulator(f, misfire_rate=0.04, readout_flip_rate=0.02, seed=123)
 
@@ -102,7 +104,7 @@ def test_all_families_normal_noise(family):
 
 @pytest.mark.parametrize("family", ["constant", "balanced", "linear", "grover", "randfun", "simon", "simon2", "perm"])
 def test_all_families_stress_noise(family):
-    rng = np.random.default_rng((hash(family) + 999) % 100000)
+    rng = np.random.default_rng((zlib.crc32(family.encode()) + 999) % 100000)
     f = generate_oracle(family, rng=rng)
     sim = OracleSimulator(f, misfire_rate=0.08, readout_flip_rate=0.04, seed=456)
 

@@ -1,0 +1,1088 @@
+{
+  "Normal (4% misfire, 2% readout)": {
+    "Proposed Adaptive": {
+      "overall_accuracy": 0.965,
+      "accuracy_ci_95": [
+        0.9421149175898474,
+        0.9790386843060713
+      ],
+      "worst_family_accuracy": 0.94,
+      "family_identification_accuracy": 0.9675,
+      "query_saving": 0.27931778929188256,
+      "average_queries": 43.505,
+      "average_runtime_sec": 0.005554629564285278,
+      "per_family_accuracy": {
+        "constant": 0.98,
+        "balanced": 0.94,
+        "linear": 0.98,
+        "grover": 0.94,
+        "randfun": 0.94,
+        "simon": 0.98,
+        "simon2": 0.96,
+        "perm": 1.0
+      },
+      "confusion_matrix": {
+        "constant": {
+          "constant": 49,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 1,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "balanced": {
+          "constant": 0,
+          "balanced": 47,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 3,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "linear": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 50,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "grover": {
+          "constant": 3,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 47,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "randfun": {
+          "constant": 1,
+          "balanced": 1,
+          "linear": 0,
+          "grover": 1,
+          "randfun": 47,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 49,
+          "simon2": 1,
+          "perm": 0
+        },
+        "simon2": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 2,
+          "simon2": 48,
+          "perm": 0
+        },
+        "perm": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 50
+        }
+      }
+    },
+    "Baseline 1 (Classical-Only)": {
+      "overall_accuracy": 0.32,
+      "accuracy_ci_95": [
+        0.27618420853468284,
+        0.36724020363463883
+      ],
+      "worst_family_accuracy": 0.0,
+      "family_identification_accuracy": 0.405,
+      "query_saving": 0.23125,
+      "average_queries": 41.485,
+      "average_runtime_sec": 0.01804505944252014,
+      "per_family_accuracy": {
+        "constant": 0.12,
+        "balanced": 0.94,
+        "linear": 0.0,
+        "grover": 0.06,
+        "randfun": 0.86,
+        "simon": 0.58,
+        "simon2": 0.0,
+        "perm": 0.0
+      },
+      "confusion_matrix": {
+        "constant": {
+          "constant": 6,
+          "balanced": 22,
+          "linear": 0,
+          "grover": 11,
+          "randfun": 11,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "balanced": {
+          "constant": 0,
+          "balanced": 47,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 3,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "linear": {
+          "constant": 0,
+          "balanced": 47,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 3,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "grover": {
+          "constant": 14,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 16,
+          "randfun": 20,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "randfun": {
+          "constant": 0,
+          "balanced": 7,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 43,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon2": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        },
+        "perm": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        }
+      }
+    },
+    "Baseline 2 (Single-Algorithm)": {
+      "overall_accuracy": 0.265,
+      "accuracy_ci_95": [
+        0.22413379560205351,
+        0.3103369647301165
+      ],
+      "worst_family_accuracy": 0.0,
+      "family_identification_accuracy": 0.375,
+      "query_saving": 0.1666666666666666,
+      "average_queries": 50.0,
+      "average_runtime_sec": 0.0034242552518844605,
+      "per_family_accuracy": {
+        "constant": 0.52,
+        "balanced": 0.0,
+        "linear": 0.6,
+        "grover": 0.0,
+        "randfun": 0.0,
+        "simon": 1.0,
+        "simon2": 0.0,
+        "perm": 0.0
+      },
+      "confusion_matrix": {
+        "constant": {
+          "constant": 50,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "balanced": {
+          "constant": 7,
+          "balanced": 0,
+          "linear": 43,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "linear": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 50,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "grover": {
+          "constant": 50,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "randfun": {
+          "constant": 48,
+          "balanced": 0,
+          "linear": 2,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon2": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        },
+        "perm": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        }
+      }
+    },
+    "Baseline 3 (Random Guessing)": {
+      "overall_accuracy": 0.0875,
+      "accuracy_ci_95": [
+        0.06358695157618474,
+        0.11926065964517749
+      ],
+      "worst_family_accuracy": 0.0,
+      "family_identification_accuracy": 0.26,
+      "query_saving": 1.0,
+      "average_queries": 0.0,
+      "average_runtime_sec": 3.081202507019043e-05,
+      "per_family_accuracy": {
+        "constant": 0.06,
+        "balanced": 0.06,
+        "linear": 0.0,
+        "grover": 0.0,
+        "randfun": 0.3,
+        "simon": 0.0,
+        "simon2": 0.0,
+        "perm": 0.28
+      },
+      "confusion_matrix": {
+        "constant": {
+          "constant": 9,
+          "balanced": 9,
+          "linear": 9,
+          "grover": 11,
+          "randfun": 12,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "balanced": {
+          "constant": 14,
+          "balanced": 3,
+          "linear": 7,
+          "grover": 13,
+          "randfun": 13,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "linear": {
+          "constant": 12,
+          "balanced": 11,
+          "linear": 11,
+          "grover": 5,
+          "randfun": 11,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "grover": {
+          "constant": 5,
+          "balanced": 8,
+          "linear": 7,
+          "grover": 17,
+          "randfun": 13,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "randfun": {
+          "constant": 14,
+          "balanced": 11,
+          "linear": 4,
+          "grover": 6,
+          "randfun": 15,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 14,
+          "simon2": 16,
+          "perm": 20
+        },
+        "simon2": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 13,
+          "simon2": 21,
+          "perm": 16
+        },
+        "perm": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 22,
+          "simon2": 14,
+          "perm": 14
+        }
+      }
+    },
+    "Baseline 4 (Non-Adaptive)": {
+      "overall_accuracy": 0.3875,
+      "accuracy_ci_95": [
+        0.34104308711293907,
+        0.4360971704928869
+      ],
+      "worst_family_accuracy": 0.0,
+      "family_identification_accuracy": 0.4975,
+      "query_saving": 0.45376344086021514,
+      "average_queries": 27.5,
+      "average_runtime_sec": 0.003309440016746521,
+      "per_family_accuracy": {
+        "constant": 0.52,
+        "balanced": 0.0,
+        "linear": 0.6,
+        "grover": 0.0,
+        "randfun": 0.0,
+        "simon": 0.98,
+        "simon2": 0.0,
+        "perm": 1.0
+      },
+      "confusion_matrix": {
+        "constant": {
+          "constant": 50,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "balanced": {
+          "constant": 4,
+          "balanced": 0,
+          "linear": 46,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "linear": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 50,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "grover": {
+          "constant": 50,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "randfun": {
+          "constant": 45,
+          "balanced": 0,
+          "linear": 5,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 49,
+          "simon2": 0,
+          "perm": 1
+        },
+        "simon2": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        },
+        "perm": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 50
+        }
+      }
+    }
+  },
+  "Stress (8% misfire, 4% readout)": {
+    "Proposed Adaptive": {
+      "overall_accuracy": 0.885,
+      "accuracy_ci_95": [
+        0.850008534680555,
+        0.9126670281795068
+      ],
+      "worst_family_accuracy": 0.76,
+      "family_identification_accuracy": 0.8975,
+      "query_saving": 0.280743879472693,
+      "average_queries": 43.7275,
+      "average_runtime_sec": 0.005844830274581909,
+      "per_family_accuracy": {
+        "constant": 0.92,
+        "balanced": 0.86,
+        "linear": 0.94,
+        "grover": 0.76,
+        "randfun": 0.92,
+        "simon": 0.88,
+        "simon2": 0.8,
+        "perm": 1.0
+      },
+      "confusion_matrix": {
+        "constant": {
+          "constant": 46,
+          "balanced": 0,
+          "linear": 2,
+          "grover": 2,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "balanced": {
+          "constant": 0,
+          "balanced": 43,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 7,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "linear": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 49,
+          "grover": 0,
+          "randfun": 1,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "grover": {
+          "constant": 9,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 41,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "randfun": {
+          "constant": 1,
+          "balanced": 3,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 46,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 44,
+          "simon2": 1,
+          "perm": 5
+        },
+        "simon2": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 10,
+          "simon2": 40,
+          "perm": 0
+        },
+        "perm": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 50
+        }
+      }
+    },
+    "Baseline 1 (Classical-Only)": {
+      "overall_accuracy": 0.2575,
+      "accuracy_ci_95": [
+        0.21709835209474207,
+        0.3025150920778163
+      ],
+      "worst_family_accuracy": 0.0,
+      "family_identification_accuracy": 0.38,
+      "query_saving": 0.1527508090614887,
+      "average_queries": 40.1,
+      "average_runtime_sec": 0.015107889771461486,
+      "per_family_accuracy": {
+        "constant": 0.0,
+        "balanced": 0.9,
+        "linear": 0.0,
+        "grover": 0.02,
+        "randfun": 0.92,
+        "simon": 0.22,
+        "simon2": 0.0,
+        "perm": 0.0
+      },
+      "confusion_matrix": {
+        "constant": {
+          "constant": 0,
+          "balanced": 24,
+          "linear": 0,
+          "grover": 9,
+          "randfun": 17,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "balanced": {
+          "constant": 0,
+          "balanced": 45,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 5,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "linear": {
+          "constant": 0,
+          "balanced": 46,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 4,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "grover": {
+          "constant": 6,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 11,
+          "randfun": 33,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "randfun": {
+          "constant": 0,
+          "balanced": 4,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 46,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon2": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        },
+        "perm": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        }
+      }
+    },
+    "Baseline 2 (Single-Algorithm)": {
+      "overall_accuracy": 0.2575,
+      "accuracy_ci_95": [
+        0.21709835209474207,
+        0.3025150920778163
+      ],
+      "worst_family_accuracy": 0.0,
+      "family_identification_accuracy": 0.375,
+      "query_saving": 0.16666666666666669,
+      "average_queries": 50.0,
+      "average_runtime_sec": 0.0036547452211380003,
+      "per_family_accuracy": {
+        "constant": 0.52,
+        "balanced": 0.0,
+        "linear": 0.6,
+        "grover": 0.0,
+        "randfun": 0.0,
+        "simon": 0.94,
+        "simon2": 0.0,
+        "perm": 0.0
+      },
+      "confusion_matrix": {
+        "constant": {
+          "constant": 50,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "balanced": {
+          "constant": 24,
+          "balanced": 0,
+          "linear": 26,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "linear": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 50,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "grover": {
+          "constant": 50,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "randfun": {
+          "constant": 48,
+          "balanced": 0,
+          "linear": 2,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon2": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        },
+        "perm": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 50,
+          "simon2": 0,
+          "perm": 0
+        }
+      }
+    },
+    "Baseline 3 (Random Guessing)": {
+      "overall_accuracy": 0.1225,
+      "accuracy_ci_95": [
+        0.09391320634415293,
+        0.15826854695539674
+      ],
+      "worst_family_accuracy": 0.0,
+      "family_identification_accuracy": 0.2675,
+      "query_saving": 1.0,
+      "average_queries": 0.0,
+      "average_runtime_sec": 3.0797123908996585e-05,
+      "per_family_accuracy": {
+        "constant": 0.16,
+        "balanced": 0.26,
+        "linear": 0.0,
+        "grover": 0.0,
+        "randfun": 0.24,
+        "simon": 0.0,
+        "simon2": 0.0,
+        "perm": 0.32
+      },
+      "confusion_matrix": {
+        "constant": {
+          "constant": 12,
+          "balanced": 11,
+          "linear": 12,
+          "grover": 7,
+          "randfun": 8,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "balanced": {
+          "constant": 13,
+          "balanced": 13,
+          "linear": 10,
+          "grover": 4,
+          "randfun": 10,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "linear": {
+          "constant": 9,
+          "balanced": 12,
+          "linear": 11,
+          "grover": 14,
+          "randfun": 4,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "grover": {
+          "constant": 8,
+          "balanced": 12,
+          "linear": 11,
+          "grover": 10,
+          "randfun": 9,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "randfun": {
+          "constant": 10,
+          "balanced": 8,
+          "linear": 16,
+          "grover": 4,
+          "randfun": 12,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 15,
+          "simon2": 21,
+          "perm": 14
+        },
+        "simon2": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 19,
+          "simon2": 18,
+          "perm": 13
+        },
+        "perm": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 14,
+          "simon2": 20,
+          "perm": 16
+        }
+      }
+    },
+    "Baseline 4 (Non-Adaptive)": {
+      "overall_accuracy": 0.345,
+      "accuracy_ci_95": [
+        0.3000879155546948,
+        0.3928608838133321
+      ],
+      "worst_family_accuracy": 0.0,
+      "family_identification_accuracy": 0.455,
+      "query_saving": 0.46859903381642526,
+      "average_queries": 27.5,
+      "average_runtime_sec": 0.0036108171939849853,
+      "per_family_accuracy": {
+        "constant": 0.52,
+        "balanced": 0.0,
+        "linear": 0.6,
+        "grover": 0.0,
+        "randfun": 0.0,
+        "simon": 0.64,
+        "simon2": 0.0,
+        "perm": 1.0
+      },
+      "confusion_matrix": {
+        "constant": {
+          "constant": 50,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "balanced": {
+          "constant": 9,
+          "balanced": 0,
+          "linear": 41,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "linear": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 50,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "grover": {
+          "constant": 50,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "randfun": {
+          "constant": 44,
+          "balanced": 0,
+          "linear": 6,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 0
+        },
+        "simon": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 32,
+          "simon2": 0,
+          "perm": 18
+        },
+        "simon2": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 46,
+          "simon2": 0,
+          "perm": 4
+        },
+        "perm": {
+          "constant": 0,
+          "balanced": 0,
+          "linear": 0,
+          "grover": 0,
+          "randfun": 0,
+          "simon": 0,
+          "simon2": 0,
+          "perm": 50
+        }
+      }
+    }
+  },
+  "budget_cap_analysis": {
+    "20": {
+      "accuracy": 0.5625,
+      "accuracy_ci_95": [
+        0.5135189134891129,
+        0.6102920545076504
+      ],
+      "average_queries": 16.98
+    },
+    "30": {
+      "accuracy": 0.7925,
+      "accuracy_ci_95": [
+        0.7500695574742972,
+        0.8293657727505549
+      ],
+      "average_queries": 26.4725
+    },
+    "40": {
+      "accuracy": 0.9025,
+      "accuracy_ci_95": [
+        0.8694877960417252,
+        0.9278548378574304
+      ],
+      "average_queries": 33.9775
+    },
+    "50": {
+      "accuracy": 0.9525,
+      "accuracy_ci_95": [
+        0.9270085123487399,
+        0.9693828959478263
+      ],
+      "average_queries": 40.14
+    },
+    "60": {
+      "accuracy": 0.95,
+      "accuracy_ci_95": [
+        0.9240364275383396,
+        0.967402542038356
+      ],
+      "average_queries": 43.6575
+    }
+  }
+}
