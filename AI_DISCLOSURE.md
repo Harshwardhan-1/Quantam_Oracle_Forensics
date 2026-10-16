@@ -6,8 +6,7 @@
 ---
 
 ### Team Information
-- **Team Name**: TODO: [Insert Team Name]
-- **Team Members**: TODO: [Insert Team Member Names and Emails]
+- **Team Name**: Phantom_Code01
 
 ---
 

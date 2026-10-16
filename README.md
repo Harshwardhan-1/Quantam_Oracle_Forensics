@@ -3,7 +3,7 @@
 **Identifying the Hidden Structure of Sealed Quantum Black Boxes**  
 *QC@IITI x QryptoNox | IBM Qiskit Fall Fest 2026 Challenge*
 
-Quantum Oracle Forensics addresses the forensic identification and secret reconstruction of sealed quantum black-box oracles $U|x\rangle|y\rangle = |x\rangle|y \oplus f(x)\rangle$ over $n=8$ input qubits with $m \in \{1, 8\}$ output bits under strict query budgets and stochastic hardware noise. Rather than applying a single monolithic textbook algorithm, our solver implements an adaptive, noise-calibrated decision pipeline that couples zero-query readout noise estimation, Bernstein-Vazirani pre-diagnostics, subspace Gaussian elimination over $\mathbb{F}_2$, noise-aware Grover amplitude search, and sequential Log-Likelihood Ratio (LLR) hypothesis testing. Across 400 benchmark instances per noise regime, the solver achieves 96.50% overall accuracy under normal noise (27.93% query saving) and 88.50% accuracy under stress noise, running strictly within the 60-query ceiling.
+Quantum Oracle Forensics addresses the forensic identification and secret reconstruction of sealed quantum black-box oracles $U\vert{}x\rangle\vert{}y\rangle = \vert{}x\rangle\vert{}y \oplus f(x)\rangle$ over $n=8$ input qubits with $m \in \{1, 8\}$ output bits under strict query budgets and stochastic hardware noise. Rather than applying a single monolithic textbook algorithm, our solver implements an adaptive, noise-calibrated decision pipeline that couples zero-query readout noise estimation, Bernstein-Vazirani pre-diagnostics, subspace Gaussian elimination over $\mathbb{F}_2$, noise-aware Grover amplitude search, and sequential Log-Likelihood Ratio (LLR) hypothesis testing. Across 400 benchmark instances per noise regime, the solver achieves 96.50% overall accuracy under normal noise (27.93% query saving) and 88.50% accuracy under stress noise, running strictly within the 60-query ceiling.
 
 ---
 
@@ -44,7 +44,7 @@ Quantam_Oracle_Forensics/
 ├── assets/
 │   └── screenshots/
 │       ├── pytest_passed.png   # Screenshot of the pytest run (46 passed)
-│       └── accuracy_result.jpg # Screenshot of the accuracy_check.py run
+│       └── accuracy_result.png # Screenshot of the accuracy_check.py run
 ├── benchmarks/
 │   ├── baselines.py            # Implementation of the 4 required baseline solvers
 │   └── run_benchmarks.py       # Comprehensive 400-trial evaluation and log generation harness
@@ -108,13 +108,10 @@ python benchmarks/run_benchmarks.py
 Screenshots of the runs on the author's machine.
 
 ### Unit & Integration Tests (`pytest -v`)
-
 ![pytest run showing 46 tests passed](assets/screenshots/pytest_passed.png)
 
 ### Accuracy Check (`python accuracy_check.py 100`)
-
 Per-family accuracy and confusion counts, 100 trials/family, normal and stress noise:
-
 ![accuracy_check.py output for normal and stress noise](assets/screenshots/accuracy_result.png)
 
 ---
@@ -135,13 +132,13 @@ def solve(
 ```
 
 - **Arguments**:
-- `n` (*int*): Number of input qubits ($n = 8$).
-- `m` (*int*): Number of output qubits ($m \in \{1, 8\}$).
-- `budget` (*int*): Maximum allowed query calls (e.g., 60).
-- `families` (*List[str]*): List of candidate family names.
-- `run` (*Callable*): Execution callback `run(circuit, shots)` returning bitstring count dictionaries in Qiskit ordering. Oracle calls must be placed as `Gate("oracle", n+m, [])`.
+  - `n` (*int*): Number of input qubits ($n = 8$).
+  - `m` (*int*): Number of output qubits ($m \in \{1, 8\}$).
+  - `budget` (*int*): Maximum allowed query calls (e.g., 60).
+  - `families` (*List[str]*): List of candidate family names.
+  - `run` (*Callable*): Execution callback `run(circuit, shots)` returning bitstring count dictionaries in Qiskit ordering. Oracle calls must be placed as `Gate("oracle", n+m, [])`.
 - **Return Value**:
-- `(family, secret)`: A 2-tuple where `family` is a string from `families`, and `secret` is the identified parameter (integer, list of integers, or `None` for families without secrets).
+  - `(family, secret)`: A 2-tuple where `family` is a string from `families`, and `secret` is the identified parameter (integer, list of integers, or `None` for families without secrets).
 
 ---
 
@@ -153,11 +150,11 @@ All figures below are taken strictly from [`logs/benchmarks_summary.json`](logs/
 
 | Solver Strategy | Overall Accuracy | 95% Confidence Interval | Worst-Family Accuracy | Family-ID Accuracy | Mean Query Saving | Avg Queries | Avg Runtime |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Proposed Adaptive** | **96.50%** | **[94.21%, 97.90%]** | **94.00%** | **96.75%** | **27.93%** | **43.51** | **0.0056s** |
-| Baseline 1 (Classical-Only) | 32.00% | [27.62%, 36.72%] | 0.00% | 40.50% | 23.12% | 41.49 | 0.0180s |
+| **Proposed Adaptive** | **96.50%** | **[94.21%, 97.90%]** | **94.00%** | **96.75%** | **27.93%** | **43.51** | **0.0057s** |
+| Baseline 1 (Classical-Only) | 32.00% | [27.62%, 36.72%] | 0.00% | 40.50% | 23.12% | 41.49 | 0.0183s |
 | Baseline 2 (Single-Algorithm) | 26.50% | [22.41%, 31.03%] | 0.00% | 37.50% | 16.67% | 50.00 | 0.0034s |
-| Baseline 3 (Random Guessing) | 8.75% | [6.32%, 11.97%] | 0.00% | 26.00% | 100.00% | 0.00 | 0.0000s |
-| Baseline 4 (Non-Adaptive) | 38.75% | [34.09%, 43.64%] | 0.00% | 49.75% | 45.38% | 27.50 | 0.0033s |
+| Baseline 3 (Random Guessing) | 10.25% | [7.65%, 13.61%] | 0.00% | 24.50% | 100.00% | 0.00 | 0.0000s |
+| Baseline 4 (Non-Adaptive) | 38.75% | [34.10%, 43.61%] | 0.00% | 49.75% | 45.38% | 27.50 | 0.0033s |
 
 *Per-family accuracy for Proposed Adaptive (Normal)*: `constant`: 98.0%, `balanced`: 94.0%, `linear`: 98.0%, `grover`: 94.0%, `randfun`: 94.0%, `simon`: 98.0%, `simon2`: 96.0%, `perm`: 100.0%.
 
@@ -165,10 +162,10 @@ All figures below are taken strictly from [`logs/benchmarks_summary.json`](logs/
 
 | Solver Strategy | Overall Accuracy | 95% Confidence Interval | Worst-Family Accuracy | Family-ID Accuracy | Mean Query Saving | Avg Queries | Avg Runtime |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Proposed Adaptive** | **88.50%** | **[85.00%, 91.27%]** | **76.00%** | **89.75%** | **28.07%** | **43.73** | **0.0058s** |
-| Baseline 1 (Classical-Only) | 25.75% | [21.72%, 30.25%] | 0.00% | 38.00% | 15.28% | 40.10 | 0.0151s |
-| Baseline 2 (Single-Algorithm) | 25.75% | [21.72%, 30.25%] | 0.00% | 37.50% | 16.67% | 50.00 | 0.0037s |
-| Baseline 3 (Random Guessing) | 12.25% | [9.36%, 15.86%] | 0.00% | 26.75% | 100.00% | 0.00 | 0.0000s |
+| **Proposed Adaptive** | **88.50%** | **[85.00%, 91.27%]** | **76.00%** | **89.75%** | **28.07%** | **43.73** | **0.0059s** |
+| Baseline 1 (Classical-Only) | 25.75% | [21.71%, 30.25%] | 0.00% | 38.00% | 15.28% | 40.10 | 0.0152s |
+| Baseline 2 (Single-Algorithm) | 25.75% | [21.71%, 30.25%] | 0.00% | 37.50% | 16.67% | 50.00 | 0.0036s |
+| Baseline 3 (Random Guessing) | 12.25% | [9.39%, 15.83%] | 0.00% | 25.75% | 100.00% | 0.00 | 0.0000s |
 | Baseline 4 (Non-Adaptive) | 34.50% | [30.01%, 39.29%] | 0.00% | 45.50% | 46.86% | 27.50 | 0.0036s |
 
 *Per-family accuracy for Proposed Adaptive (Stress)*: `constant`: 92.0%, `balanced`: 86.0%, `linear`: 94.0%, `grover`: 76.0%, `randfun`: 92.0%, `simon`: 88.0%, `simon2`: 80.0%, `perm`: 100.0%.
