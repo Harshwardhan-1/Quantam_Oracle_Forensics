@@ -3,6 +3,8 @@
 **Identifying the Hidden Structure of Sealed Quantum Black Boxes**  
 *QC@IITI x QryptoNox | IBM Qiskit Fall Fest 2026 Challenge*
 
+🔗 **Repository:** [https://github.com/Harshwardhan-1/Quantam_Oracle_Forensics](https://github.com/Harshwardhan-1/Quantam_Oracle_Forensics)
+
 Quantum Oracle Forensics addresses the forensic identification and secret reconstruction of sealed quantum black-box oracles $U\vert{}x\rangle\vert{}y\rangle = \vert{}x\rangle\vert{}y \oplus f(x)\rangle$ over $n=8$ input qubits with $m \in \{1, 8\}$ output bits under strict query budgets and stochastic hardware noise. Rather than applying a single monolithic textbook algorithm, our solver implements an adaptive, noise-calibrated decision pipeline that couples zero-query readout noise estimation, Bernstein-Vazirani pre-diagnostics, subspace Gaussian elimination over $\mathbb{F}_2$, noise-aware Grover amplitude search, and sequential Log-Likelihood Ratio (LLR) hypothesis testing. Across 400 benchmark instances per noise regime, the solver achieves 96.50% overall accuracy under normal noise (27.93% query saving) and 88.50% accuracy under stress noise, running strictly within the 60-query ceiling.
 
 ---
@@ -65,7 +67,7 @@ Requires Python 3.10+ (tested on Python 3.14). To set up on macOS or Linux:
 
 ```bash
 # 1. Clone repository and navigate to project root
-git clone <REPO_URL>
+git clone https://github.com/Harshwardhan-1/Quantam_Oracle_Forensics.git
 cd Quantam_Oracle_Forensics
 
 # 2. Create virtual environment
